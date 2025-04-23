@@ -1,15 +1,28 @@
-const livros = require('./listaLivros');
-const menorValor = require('./menorValor');
+const livros = require('./listaLivros.js');
+const menorValor = require('./menorValor.js');
+const troca = require('./troca.js')
 
 for(let atual = 0; atual < livros.length -1; atual++){
     let menor = menorValor(livros, atual);
-    let livroAtual = livros[atual];
-    console.log("posição atual: ", atual);
-    console.log("Livro Atual: ", livroAtual);
-    let livroMenorPreco = livros[menor];
-    console.log("Livro Menor Preço: ", livros[menor]);
-
-    livros[atual] = livroMenorPreco;
-    livros[menor] = livroAtual;
+    troca(livros,menor);
+ 
 }
 console.log(livros);
+
+// código anterior
+
+// const livros = require('./listaLivros');
+// const menorValor = require('./menorValor');
+
+// for(let atual = 0; atual < livros.length -1; atual++){
+//     let menor = menorValor(livros, atual);
+//     let livroAtual = livros[atual];
+//     console.log("posição atual: ", atual);
+//     console.log("Livro Atual: ", livroAtual);
+//     let livroMenorPreco = livros[menor];
+//     console.log("Livro Menor Preço: ", livros[menor]);
+
+//     livros[atual] = livroMenorPreco;
+//     livros[menor] = livroAtual;
+// }
+// console.log(livros);
